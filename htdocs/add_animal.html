@@ -1,0 +1,24 @@
+<form action="process_add_animal.php" method="POST">
+    <h3>Add Animal</h3>
+    <label for="name">Name:</label><br>
+    <input type="text" name="name" required><br>
+    
+    <label for="birth_year">Birth Year:</label><br>
+    <input type="number" name="birth_year" required><br>
+    
+    <label for="habitat">Habitat:</label><br>
+    <input type="text" name="habitat" required><br>
+    
+    <label for="lifespan">Lifespan:</label><br>
+    <input type="number" name="lifespan" required><br>
+    
+    <label for="type_id">Type:</label><br>
+    <!-- Assume type_id 1=Mammal, 2=Bird, 3=Reptile -->
+    <select name="type_id">
+        <option value="1">Mammal</option>
+        <option value="2">Bird</option>
+        <option value="3">Reptile</option>
+    </select><br><br>
+    
+    <input type="submit" value="Add Animal">
+</form>

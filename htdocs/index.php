@@ -6,10 +6,11 @@ include 'display_records.php';
 include 'update_records.php';
 include 'delete_records.php';
 include 'add_animal.html';
-// include 'add_details.html';
-// include 'add_diet.html';
-// include 'assign_diet.html';
+include 'add_details.html';
+include 'assign_diet.html';
 include 'update_animal.html';
+include 'process_delete_animal.php';
+include 'delete_animal.html';
 // The rest of your code (your classes and object instantiation)
   
 // Parent class
@@ -86,24 +87,7 @@ class Animals {
     }
 }
 
-// Child class 1: Mammals
-// class Mammals extends Animals {
-//     public $furType;
-//     public $sDomesticated;
-    
-//     public function __construct($name, $birthYear, $habitat, $lifespan, $diet, $furType,$sDomesticated) {
-//         parent::__construct($name, $birthYear, $habitat, $lifespan, $diet);
-//         $this->furType = $furType;
-//         $this->sDomesticated = $sDomesticated;
-//     }
 
-//     public function getFurType() {
-//         return $this->furType;
-//     }
-
-//     public function setFurType($furType) {
-//         $this->furType = $furType;
-//     }
 
 
 
@@ -135,23 +119,6 @@ class Mammals extends Animals {
         $this->sDomesticated = $sDomesticated;
     }
 
-
-
-    
-    
-
-    // public function is_big(){
-    //     if(strtolower($this->$furType)=='none') {
-    //         if($this->$weigh >400){
-    //             echo "immma hippo   ";
-    //         }
-    //         else {
-    //             echo "im an  elephant ";
-    //         }
-    //     }
-    // }
-
-
     public function giveBirth() {
         $babyName = $this->name . "'s Baby";
         $baby = new Mammal($babyName, 0, $this->furColor, $this->isDomesticated);
@@ -164,14 +131,6 @@ class Mammals extends Animals {
             echo "born in the new milenium";
         }
     } 
-
-
-
-    
-    
-
-   
-   
 }
 
 
@@ -202,10 +161,7 @@ class Birds extends Animals {
         $this->wingColor = $wingColor;
     }
 
-    // Function to display the wing color
-    public function displayWingColor() {
-        return "Wing Color: " . $this->wingColor;
-    }
+    
 
     public function sing() {
         echo "{$this->name} is singing a melody.\n";
@@ -269,7 +225,7 @@ if ($result_animals && $result_animals->num_rows > 0) {
 
 // $conn->close();
 
-// $longestLifespanAnimal = Animals::getLongestLifespanAnimal($animals);
+
 
 
 ?>
